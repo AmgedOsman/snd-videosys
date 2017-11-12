@@ -1,0 +1,98 @@
+button.btn.btn-default.navbar-btn{
+  float:right;
+}
+
+iframe{
+}
+
+fa{
+}
+
+#share{
+  width:100%;
+  text-align:center;
+}
+
+#share{
+}
+
+#share a{
+  width:50px;
+  height:50px;
+  display:inline-block;
+  margin:8px;
+  border-radius:50%;
+  font-size:24px;
+  color:#fff;
+  opacity:0.75;
+  transition:opacity 0.15s linear;
+}
+
+#share a:hover{
+  opacity:1;
+}
+
+#share i{
+}
+
+#share i{
+  position:relative;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.face{
+}
+
+.facebook{
+  background:#3b5998;
+}
+
+.twitter{
+  background:#55acee;
+}
+
+.form-group textarea{
+  width:50%;
+}
+
+input.form-control.browse{
+  display:inline;
+  width:41%;
+}
+
+button.btn.btn-default.browse{
+  display:inline;
+  height:40px;
+  margin-bottom:5px;
+}
+
+button.btn.btn-success{
+}
+
+button.btn.btn-success.upload{
+  width:50%;
+  margin:0 auto;
+}
+
+div.progress{
+  margin-top:-21px;
+}
+
+.content-table{
+  text-align:center;
+}
+
+.content-table th{
+  text-align:center;
+}
+
+.tsize{
+  width:80%;
+  margin:0 auto;
+}
+
+.tsize input{
+  width:50%;
+}
+

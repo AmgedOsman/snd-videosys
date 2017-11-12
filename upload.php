@@ -19,17 +19,35 @@
             </div>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav">
-                    <li class="active" role="presentation"><a href="index.php">Home </a></li>
-                    <li role="presentation"><a href="upload.php">Upload a video</a></li>
+                    <li role="presentation"><a href="index.php">Home </a></li>
+                    <li class="active" role="presentation"><a href="upload.php">Upload a video</a></li>
                     <li role="presentation"><a href="manage.php">Manage Uploads</a></li>
                 </ul>
-                <button class="btn btn-default navbar-btn" type="button" data-toggle="modal" data-target="#signin">Sign In</button>
+                <button class="btn btn-default navbar-btn" type="button">Logout </button>
+                <button class="btn btn-default navbar-btn" type="button" data-toggle="modal" data-target="#signin">Welcome, Mostafa</button>
             </div>
         </div>
     </nav>
-    <h1 class="text-center">Our Latest YouTube Video</h1>
-    <div align="center">
-        <iframe width="560" height="315" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/Dwbdq_UU3p0"></iframe>
+    <div class="progress">
+        <div class="progress-bar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">0%</div>
+    </div>
+    <h1 class="text-center">Uploading a video</h1>
+    <div class="tsize" align="center">
+        <form>
+            <div class="form-group" align="center">
+                <input class="form-control" type="text" placeholder="Title">
+            </div>
+            <div class="form-group" align="center">
+                <textarea class="form-control" rows="4" cols="20" placeholder="Description"></textarea>
+            </div>
+            <div class="form-group" align="center">
+                <input class="form-control browse" type="text" readonly="">
+                <button class="btn btn-default browse" type="button">Browse </button>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success upload" type="button">Upload </button>
+            </div>
+        </form>
     </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="signin">
         <div class="modal-dialog" role="document">
@@ -53,19 +71,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div>
-        <div id="share">
-
-  <!-- facebook -->
-  <a class="facebook" href="https://www.facebook.com/share.php?u={{url}}&title={{title}}" target="blank"><i class="fa fa-facebook"></i></a>
-
-  <!-- twitter -->
-  <a class="twitter" href="https://twitter.com/intent/tweet?status={{title}}+{{url}}" target="blank"><i class="fa fa-twitter"></i></a>
-  
-</div>
-
-
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
