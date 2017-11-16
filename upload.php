@@ -9,7 +9,10 @@ if(!isset($_SESSION['username'])){
 if(isset($_POST['submit_video']))
 {
   $uploadfile=$_FILES["upload_file"]["tmp_name"];
-  $folder="videos/";
+  $folder="videos/".$_POST['nickname']."/";
+if (!file_exists('videos/'.$_POST['nickname'])) {
+    mkdir('videos/'.$_POST['nickname'], 0777, true);
+}
   move_uploaded_file($_FILES["upload_file"]["tmp_name"], $folder.$_FILES["upload_file"]["name"]);
 }
 ?>
@@ -54,7 +57,7 @@ if(isset($_POST['submit_video']))
     <div class="tsize" align="center">
         <form id="upload-form" enctype="multipart/form-data" action="upload.php" method="POST">
             <div class="form-group" align="center">
-                <input class="form-control" type="text" placeholder="Nickname">
+                <input class="form-control" type="text" placeholder="Nickname" name="nickname">
             </div>
             <div class="form-group">
                 <div class="dropdown kill">
