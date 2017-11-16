@@ -96,3 +96,12 @@ div.progress{
   width:50%;
 }
 
+ul.dropdown-menu{
+  margin-left:50%;
+}
+
+div.dropdown.kill{
+  display:inline;
+  margin-right:5px;
+}
+

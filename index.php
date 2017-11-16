@@ -1,3 +1,19 @@
+<?PHP
+session_start();
+include('includes/db-connect.php');
+include('includes/admin.php');
+if(isset($_POST['username'])){
+    $admin = new Admin();
+    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
+    $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
+
+    echo '<script>alert("login");</script>';
+    if($admin->userLogin($username, $password)){
+        $_SESSION["username"] = $username;
+        header("Location: manage.php");
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -8,7 +24,6 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/untitled.css">
 </head>
 
 <body>
@@ -23,9 +38,17 @@
                     <li role="presentation"><a href="upload.php">Upload a video</a></li>
                     <li role="presentation"><a href="manage.php">Manage Uploads</a></li>
                 </ul>
-                <button class="btn btn-default navbar-btn" type="button" data-toggle="modal" data-target="#signin">Sign In</button>
+                <?PHP
+                        if(!isset($_SESSION['username'])){
+                    ?>
+                        <button class="btn btn-default navbar-btn" type="button" data-toggle="modal" data-target="#signin">Sign In</button>
+                    <?php } else { ?>
+                        
+                <button class="btn btn-default navbar-btn">Welcome, <?php echo $_SESSION['username']; ?></button>
+                    <?php } ?>
             </div>
         </div>
+        
     </nav>
     <h1 class="text-center">Our Latest YouTube Video</h1>
     <div align="center">
@@ -38,19 +61,20 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                     <h4 class="modal-title">Sign In</h4></div>
                 <div class="modal-body">
-                    <form>
+                    <form method="POST" action="index.php" name="submit">
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Username">
+                            <input class="form-control" type="text" placeholder="Username" id="username" name="username">
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="password" placeholder="Password">
+                            <input class="form-control" type="password" placeholder="Password" id="password" name="password">
                         </div>
-                    </form>
+                    
                     <h4>To activate your account press <a href="#">here </a></h4></div>
                 <div class="modal-footer">
                     <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
                     <button class="btn btn-primary" type="submit">Sign In</button>
                 </div>
+            </form>        
             </div>
         </div>
     </div>
